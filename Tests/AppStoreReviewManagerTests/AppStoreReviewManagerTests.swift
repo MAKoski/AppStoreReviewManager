@@ -6,7 +6,10 @@ final class AppStoreReviewManagerTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(AppStoreReviewManager().text, "Hello, World!")
+        AppStoreReviewManager.requestReview { (success, version) in
+            print("success: \(success)")
+            print("version: \(version ?? "is nil")")
+        }
     }
 
     static var allTests = [
